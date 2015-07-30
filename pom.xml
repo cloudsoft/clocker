@@ -48,11 +48,12 @@
 
         <!-- Dependencies -->
         <jclouds.groupId>io.cloudsoft.jclouds</jclouds.groupId>
-        <jclouds.version>1.9.1-clocker-pre.2</jclouds.version>
+        <jclouds.version>1.9.1-alpha-cloudsoft.2</jclouds.version> <!-- JCLOUDS_VERSION -->
 
         <!-- Testing -->
         <testng.version>6.8</testng.version>
-        <brooklyn.version>0.7.0-clocker-pre.2</brooklyn.version> <!-- BROOKLYN_VERSION -->
+        <brooklyn.version>0.8.0-SNAPSHOT</brooklyn.version> <!-- BROOKLYN_VERSION -->
+        <advanced-networking.version>0.8.0-SNAPSHOT</advanced-networking.version>  <!-- ADVANCED_NETWORKING_VERSION -->
         <includedTestGroups/>
         <excludedTestGroups>Integration,Live,WIP</excludedTestGroups>
 

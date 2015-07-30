@@ -33,14 +33,50 @@
     </description>
 
     <dependencies>
+        <!--
+            Explicitly include the jclouds dependencies we need; exclude everything else
+            that comes in as a transient dependency, to guarantee that don't get old
+            versions of jclouds coming in!
+            This only really works because Clocker here will be embedded inside AMP, which
+            will pull in all jclouds compute providers.
+         -->
+        <dependency>
+             <groupId>${jclouds.groupId}.labs</groupId>
+             <artifactId>docker</artifactId>
+             <version>${jclouds.version}</version>
+        </dependency>
+        <dependency>
+             <groupId>${jclouds.groupId}.provider</groupId>
+             <artifactId>softlayer</artifactId>
+             <version>${jclouds.version}</version>
+        </dependency>
+        <dependency>
+             <groupId>${jclouds.groupId}.api</groupId>
+             <artifactId>cloudstack</artifactId>
+             <version>${jclouds.version}</version>
+        </dependency>
+        <dependency>
+             <groupId>${jclouds.groupId}.provider</groupId>
+             <artifactId>aws-ec2</artifactId>
+             <version>${jclouds.version}</version>
+        </dependency>
+        
         <dependency>
             <groupId>org.apache.brooklyn</groupId>
             <artifactId>brooklyn-all</artifactId>
             <version>${brooklyn.version}</version>
             <exclusions>
                 <exclusion>
-                    <groupId>${jclouds.groupId}.labs</groupId>
-                    <artifactId>docker</artifactId>
+                    <groupId>org.apache.jclouds</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.jclouds.driver</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.jclouds.labs</groupId>
+                    <artifactId>*</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -48,11 +84,43 @@
             <groupId>io.brooklyn.networking</groupId>
             <artifactId>brooklyn-networking-portforwarding</artifactId>
             <version>${advanced-networking.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.jclouds</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.jclouds.driver</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.jclouds.labs</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>io.brooklyn.networking</groupId>
             <artifactId>brooklyn-networking-cloudstack</artifactId>
             <version>${advanced-networking.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.jclouds</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.jclouds.api</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.jclouds.driver</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.jclouds.labs</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>io.brooklyn.clocker</groupId>

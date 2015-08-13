@@ -34,6 +34,7 @@ RUN type apt-get ; \
     apt-get install -y openssh-server ; \
   else \
     yum -y install openssh-server ; \
+    /usr/bin/ssh-keygen -A ; \
   fi ; \
   mkdir /var/run/sshd ; \
   chmod 600 /var/run/sshd ;

@@ -28,12 +28,12 @@
     <parent>
         <groupId>org.apache.brooklyn</groupId>
         <artifactId>brooklyn-downstream-parent</artifactId>
-        <version>0.8.0-cloudsoft-SNAPSHOT</version> <!-- BROOKLYN_VERSION -->
+        <version>0.8.0-cloudsoft-20150828.1505</version> <!-- BROOKLYN_VERSION -->
     </parent>
 
     <groupId>io.brooklyn.clocker</groupId>
     <artifactId>brooklyn-clocker-parent</artifactId>
-    <version>1.0.0-cloudsoft-SNAPSHOT</version>  <!-- CLOCKER_VERSION -->
+    <version>1.0.0-cloudsoft-20150828.1505</version>  <!-- CLOCKER_VERSION -->
     <packaging>pom</packaging>
     <name>Clocker Project (Parent)</name>
     <description>
@@ -52,8 +52,8 @@
 
         <!-- Testing -->
         <testng.version>6.8</testng.version>
-        <brooklyn.version>0.8.0-cloudsoft-SNAPSHOT</brooklyn.version> <!-- BROOKLYN_VERSION -->
-        <advanced-networking.version>0.8.0-cloudsoft-SNAPSHOT</advanced-networking.version>  <!-- ADVANCED_NETWORKING_VERSION -->
+        <brooklyn.version>0.8.0-cloudsoft-20150828.1505</brooklyn.version> <!-- BROOKLYN_VERSION -->
+        <advanced-networking.version>0.8.0-cloudsoft-20150828.1505</advanced-networking.version>  <!-- ADVANCED_NETWORKING_VERSION -->
         <includedTestGroups/>
         <excludedTestGroups>Integration,Live,WIP</excludedTestGroups>
 

@@ -13,7 +13,7 @@
 # limitations under the License.
 
 brooklyn.catalog:
-  version: 1.1.0-cloudsoft-SNAPSHOT # CLOCKER_VERSION
+  version: 1.1.0-cloudsoft-20150917.1636 # CLOCKER_VERSION
   items:
 
   # load everything in the classpath with a @Catalog annotation

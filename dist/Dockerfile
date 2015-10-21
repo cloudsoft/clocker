@@ -16,14 +16,14 @@ FROM gliderlabs/alpine:3.1
 MAINTAINER andrew.kennedy@cloudsoft.io
 
 # CLOCKER_VERSION_BELOW
-LABEL version="1.1.0-cloudsoft-SNAPSHOT"
+LABEL version="1.1.0-cloudsoft-20151021.1332"
 
 RUN apk-install openjdk7-jre-base ; \
     apk-install bash ; \
     apk-install wget
 
 # CLOCKER_VERSION_BELOW
-RUN wget http://ccweb.cloudsoftcorp.com/maven/libs-release-local/io/brooklyn/clocker/brooklyn-clocker-dist/1.1.0-cloudsoft-SNAPSHOT/brooklyn-clocker-dist-1.1.0-cloudsoft-SNAPSHOT-dist.tar.gz -O /brooklyn-clocker-dist.tar.gz ; \
+RUN wget http://ccweb.cloudsoftcorp.com/maven/libs-release-local/io/brooklyn/clocker/brooklyn-clocker-dist/1.1.0-cloudsoft-20151021.1332/brooklyn-clocker-dist-1.1.0-cloudsoft-20151021.1332-dist.tar.gz -O /brooklyn-clocker-dist.tar.gz ; \
     tar zxf brooklyn-clocker-dist.tar.gz ; \
     rm -f brooklyn-clocker-dist.tar.gz
 

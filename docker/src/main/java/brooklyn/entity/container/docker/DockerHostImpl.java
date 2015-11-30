@@ -684,7 +684,7 @@ public class DockerHostImpl extends MachineEntityImpl implements DockerHost {
         sensors().set(JCLOUDS_DOCKER_LOCATION, jcloudsLocation);
 
         DockerPortForwarder portForwarder = new DockerPortForwarder();
-        portForwarder.injectManagementContext(getManagementContext());
+        portForwarder.setManagementContext(getManagementContext());
         portForwarder.init(URI.create(jcloudsLocation.getEndpoint()));
         SubnetTier subnetTier = addChild(EntitySpec.create(SubnetTier.class, SubnetTierImpl.class)
                 .configure(SubnetTier.PORT_FORWARDER, portForwarder)
@@ -824,17 +824,16 @@ public class DockerHostImpl extends MachineEntityImpl implements DockerHost {
                     String containerId = Strings.getFirstWord(runDockerCommand("inspect --format {{.Id}} " + id));
                     String imageId = Strings.getFirstWord(runDockerCommand("inspect --format {{.Image}} " + id));
                     String imageName = Strings.getFirstWord(runDockerCommand("inspect --format {{.Config.Image}} " + id));
-                    EntitySpec<DockerContainer> containerSpec = EntitySpec.create(config().get(DOCKER_CONTAINER_SPEC))
+                    EntitySpec<?> containerSpec = EntitySpec.create(config().get(DOCKER_CONTAINER_SPEC))
                             .configure(SoftwareProcess.ENTITY_STARTED, Boolean.TRUE)
                             .configure(DockerContainer.DOCKER_HOST, this)
                             .configure(DockerContainer.DOCKER_INFRASTRUCTURE, getInfrastructure())
                             .configure(DockerContainer.DOCKER_IMAGE_ID, imageId)
                             .configure(DockerContainer.DOCKER_IMAGE_NAME, imageName)
-                            .configure(DockerContainer.LOCATION_FLAGS, MutableMap.of("container", getMachine()));
+                            .configure(DockerContainer.LOCATION_FLAGS, MutableMap.<String, Object>of("container", getMachine()));
 
                     // Create, manage and start the container
-                    DockerContainer added = getDockerContainerCluster().addChild(containerSpec);
-                    Entities.manage(added);
+                    DockerContainer added = (DockerContainer) getDockerContainerCluster().addChild(containerSpec);
                     getDockerContainerCluster().addMember(added);
                     added.sensors().set(DockerContainer.CONTAINER_ID, containerId);
                     added.start(ImmutableList.of(getDynamicLocation().getMachine()));

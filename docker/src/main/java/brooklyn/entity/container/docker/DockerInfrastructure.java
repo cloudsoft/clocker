@@ -86,12 +86,17 @@ public interface DockerInfrastructure extends Application, Resizable, LocationOw
     @SetFromFlag("enableSdn")
     ConfigKey<Boolean> SDN_ENABLE = SdnAttributes.SDN_ENABLE;
 
-    @SetFromFlag("sdnProviderSpec")
-    ConfigKey<EntitySpec> SDN_PROVIDER_SPEC = ConfigKeys.newConfigKey(EntitySpec.class, "sdn.provider.spec", "SDN provider entity specification");
+	@SetFromFlag("sdnProviderSpec")
+	@SuppressWarnings("serial")
+    ConfigKey<EntitySpec<?>> SDN_PROVIDER_SPEC = ConfigKeys.newConfigKey(
+    		new TypeToken<EntitySpec<?>>() {}, 
+    		"sdn.provider.spec", 
+    		"SDN provider entity specification");
 
-    @SetFromFlag("hostSpec")
-    AttributeSensorAndConfigKey<EntitySpec, EntitySpec> DOCKER_HOST_SPEC = ConfigKeys.newSensorAndConfigKey(
-            EntitySpec.class, "docker.host.spec", "Specification to use when creating child Docker Hosts",
+	@SetFromFlag("hostSpec")
+	@SuppressWarnings("serial")
+    AttributeSensorAndConfigKey<EntitySpec<?>, EntitySpec<?>> DOCKER_HOST_SPEC = ConfigKeys.newSensorAndConfigKey(
+            new TypeToken<EntitySpec<?>>() {}, "docker.host.spec", "Specification to use when creating child Docker Hosts",
             EntitySpec.create(DockerHost.class));
 
     @SetFromFlag("generateCerts")

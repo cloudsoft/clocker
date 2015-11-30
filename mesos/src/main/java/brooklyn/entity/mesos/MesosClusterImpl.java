@@ -448,7 +448,7 @@ public class MesosClusterImpl extends BasicStartableImpl implements MesosCluster
 
             // Setup port forwarding
             MarathonPortForwarder portForwarder = new MarathonPortForwarder();
-            portForwarder.injectManagementContext(getManagementContext());
+            portForwarder.setManagementContext(getManagementContext());
             portForwarder.init(hostname);
 
             EntitySpec<MesosSlave> slaveSpec = EntitySpec.create(MesosSlave.class)

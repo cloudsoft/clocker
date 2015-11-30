@@ -89,9 +89,10 @@ public interface DockerHost extends MachineEntity, Resizable, HasShortName, Loca
     @SetFromFlag("useSsh")
     ConfigKey<Boolean> DOCKER_USE_SSH = DockerAttributes.DOCKER_USE_SSH;
 
-    @SetFromFlag("containerSpec")
-    AttributeSensorAndConfigKey<EntitySpec, EntitySpec> DOCKER_CONTAINER_SPEC = ConfigKeys.newSensorAndConfigKey(
-            EntitySpec.class, "docker.container.spec", "Specification to use when creating child Docker container",
+	@SetFromFlag("containerSpec")
+	@SuppressWarnings("serial")
+    AttributeSensorAndConfigKey<EntitySpec<?>, EntitySpec<?>> DOCKER_CONTAINER_SPEC = ConfigKeys.newSensorAndConfigKey(
+            new TypeToken<EntitySpec<?>>() {}, "docker.container.spec", "Specification to use when creating child Docker container",
             EntitySpec.create(DockerContainer.class));
 
     @SetFromFlag("infrastructure")

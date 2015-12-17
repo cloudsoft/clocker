@@ -31,7 +31,7 @@
     <parent>
         <groupId>io.brooklyn.clocker</groupId>
         <artifactId>brooklyn-clocker-parent</artifactId>
-        <version>1.1.0-cloudsoft-SNAPSHOT</version>  <!-- CLOCKER_VERSION -->
+        <version>1.1.0-cloudsoft-20151217.1351</version>  <!-- CLOCKER_VERSION -->
         <relativePath>../pom.xml</relativePath>
     </parent>
 

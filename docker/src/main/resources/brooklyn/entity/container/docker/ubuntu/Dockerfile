@@ -18,7 +18,7 @@ FROM ubuntu:14.04
 MAINTAINER Cloudsoft "brooklyn@cloudsoftcorp.com"
 
 # CLOCKER_VERSION_BELOW
-LABEL version="1.1.0-cloudsoft-SNAPSHOT"
+LABEL version="1.1.0-cloudsoft-20151223.1015"
 
 # Make sure the package repository is up to date
 RUN ( echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" ; echo "deb http://archive.ubuntu.com/ubuntu trusty-updates main universe" ) > /etc/apt/sources.list

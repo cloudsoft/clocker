@@ -17,3 +17,4 @@ brooklyn.catalog:
           timeout.runtimeAssertion: 1h
         services:
           - type: kubernetes-cluster-tests
+          - type: openshift-cluster-tests

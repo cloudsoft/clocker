@@ -1,7 +1,7 @@
 brooklyn.catalog:
   items:
   - id: openshift-cluster-tests
-    version: "2.1.0-SNAPSHOT" # CLOCKER_VERSION
+    version: "2.1.0-20161108.1349" # CLOCKER_VERSION
     itemType: template
     iconUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/OpenShift-LogoType.svg/225px-OpenShift-LogoType.svg.png
     name: "OpenShift Cluster Tests"

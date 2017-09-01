@@ -1,5 +1,5 @@
 brooklyn.catalog:
-  version: "2.1.0-SNAPSHOT" # CLOCKER_VERSION
+  version: "2.1.0-20170901.1050" # CLOCKER_VERSION
   items:
   - classpath://io.brooklyn.etcd.brooklyn-etcd:etcd/etcd.bom
   - classpath://io.brooklyn.clocker.common:docker/docker.bom
@@ -21,7 +21,7 @@ brooklyn.catalog:
       Creates a Swarm of Docker engines, of configurable initial size, using an Etcd cluster for discovery.
     itemType: entity
     iconUrl: classpath://io.brooklyn.clocker.swarm:icons/swarm.png
-    version: "2.1.0-SNAPSHOT" # CLOCKER_VERSION
+    version: "2.1.0-20170901.1050" # CLOCKER_VERSION
     publish:      
       license_code: Apache-2.0
       overview: README.md      

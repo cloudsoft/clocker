@@ -1,9 +1,9 @@
 brooklyn.catalog:
-  version: "2.1.0-SNAPSHOT" # CLOCKER_VERSION
+  version: "2.1.0-20171101.2038" # CLOCKER_VERSION
 
   brooklyn.libraries:
-  - mvn:io.brooklyn.clocker/clocker-common/2.1.0-SNAPSHOT # CLOCKER_VERSION
-  - mvn:io.brooklyn.etcd/brooklyn-etcd/2.7.0-SNAPSHOT # BROOKLYN_ETCD_VERSION
+  - mvn:io.brooklyn.clocker/clocker-common/2.1.0-20171101.2038 # CLOCKER_VERSION
+  - mvn:io.brooklyn.etcd/brooklyn-etcd/2.7.0-20171101.2038 # BROOKLYN_ETCD_VERSION
 
   items:
   - id: docker-swarm-template
@@ -22,7 +22,7 @@ brooklyn.catalog:
       Creates a Swarm of Docker engines, of configurable initial size, using an Etcd cluster for discovery.
     itemType: entity
     iconUrl: classpath://io.brooklyn.clocker.swarm:icons/swarm.png
-    version: "2.1.0-SNAPSHOT" # CLOCKER_VERSION
+    version: "2.1.0-20171101.2038" # CLOCKER_VERSION
     publish:      
       license_code: Apache-2.0
       overview: README.md      

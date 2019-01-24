@@ -1,10 +1,10 @@
 brooklyn.catalog:
-  version: "2.1.0-SNAPSHOT" # CLOCKER_VERSION
+  version: "2.1.0-20190124.1552" # CLOCKER_VERSION
 
   brooklyn.libraries:
-  - mvn:io.brooklyn.clocker/clocker-common/2.1.0-SNAPSHOT # CLOCKER_VERSION
-  - mvn:io.brooklyn.dns/brooklyn-dns/0.2.0-SNAPSHOT # BROOKLYN_DNS_VERSION
-  - mvn:io.brooklyn.etcd/brooklyn-etcd/2.7.0-SNAPSHOT # BROOKLYN_ETCD_VERSION
+  - mvn:io.brooklyn.clocker/clocker-common/2.1.0-20190124.1552 # CLOCKER_VERSION
+  - mvn:io.brooklyn.dns/brooklyn-dns/0.2.0-20190124.1552 # BROOKLYN_DNS_VERSION
+  - mvn:io.brooklyn.etcd/brooklyn-etcd/2.7.0-20190124.1552 # BROOKLYN_ETCD_VERSION
 
   items:
   - id: kubernetes-cluster-application
@@ -13,7 +13,7 @@ brooklyn.catalog:
       Kubernetes cluster with a master node and worker nodes
     iconUrl: classpath://io.brooklyn.clocker.kubernetes:icons/kubernetes.png
     itemType: entity
-    version: "2.1.0-SNAPSHOT" # CLOCKER_VERSION
+    version: "2.1.0-20190124.1552" # CLOCKER_VERSION
     publish:
       license_code: Apache-2.0
       overview: README.md
@@ -817,7 +817,7 @@ brooklyn.catalog:
           DNS_LOCAL_DOMAIN: $brooklyn:entity("kubernetes-cluster").config("kubernetes.dns.domain")
           CADVISOR_PORT: $brooklyn:parent().config("kubernetes.cadvisor.port")
           SCHEDULABLE: $brooklyn:config("kubernetes.schedulable")
-          CLOCKER_VERSION: "2.1.0-SNAPSHOT"
+          CLOCKER_VERSION: "2.1.0-20190124.1552"
 
         customize.command: |
           sudo -E tee /etc/cni/net.d/10-calico.conf <<-EOF
